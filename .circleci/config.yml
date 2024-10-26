@@ -20,6 +20,10 @@ jobs:
             - node_modules
           key: v1-node-modules-{{ checksum "package.json" }}
 
+      - run:
+          name: Run UI Tests
+          command: npm run test:ui
+
   run-api-tests:
     docker:
       - image: circleci/node:18  
