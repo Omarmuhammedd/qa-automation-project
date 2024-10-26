@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="0">
+
+  <testsuite name="ui.test"
+    errors="1" failures="0" hostname="" id="" package="ui.test" skipped="8"
+    tests="0" time="0.001000" timestamp="">
+  
+
+  
+    <system-err>
+       An error occurred while creating a new GeckoDriver session: [InvalidArgumentError] binary is not a Firefox executable
+  Verify if GeckoDriver is configured correctly; using:
+  {
+     start_process: true,
+     server_path: &#39;&#39;,
+     port: 4444,
+     host: &#39;localhost&#39;,
+     ssl: false,
+     default_path_prefix: &#39;&#39;,
+     proxy: undefined,
+     cli_args: {}
+  }
+
+ 
+  Set webdriver.log_path in your Nightwatch config to retrieve more logs from GeckoDriver.
+    </system-err>
+  
+
+    
+    <error message="An error occurred while creating a new GeckoDriver session: [InvalidArgumentError] binary is not a Firefox executable"><![CDATA[
+      InvalidArgumentError: An error occurred while creating a new GeckoDriver session: [InvalidArgumentError] binary is not a Firefox executable
+    at Object.throwDecodedError (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\selenium-webdriver\lib\error.js:521:15)
+    at parseHttpResponse (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\selenium-webdriver\lib\http.js:514:13)
+    at Executor.execute (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\selenium-webdriver\lib\http.js:446:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      ]]></error>  
+
+  
+    
+    <testcase
+      name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - File Upload" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Subject Heading" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Invalid Email" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Message" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Order Reference" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Search Test" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

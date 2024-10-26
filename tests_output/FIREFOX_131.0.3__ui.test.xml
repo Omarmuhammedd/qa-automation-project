@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="ui.test"
+    errors="0" failures="1" hostname="" id="" package="ui.test" skipped="7"
+    tests="1" time="0.1300" timestamp="">
+  
+    <testcase name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.test" time="0.06300" assertions="1">  <failure message="browser.page.contactUsPage is not a function">TypeError: browser.page.contactUsPage is not a function
+    at Test Contact Us - Valid Submission (Customer Service) (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:3:36)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+    
+    <testcase
+      name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - File Upload" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Subject Heading" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Invalid Email" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Message" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Order Reference" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Search Test" classname="ui.test">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

@@ -1,0 +1,24 @@
+
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14  # Use the desired Node.js version
+    steps:
+      - checkout  # Check out the code
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run UI Tests
+          command: npm run test:ui
+      - run:
+          name: Run API Tests
+          command: npm run test:api
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - build
