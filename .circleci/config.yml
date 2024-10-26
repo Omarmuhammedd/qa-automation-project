@@ -3,12 +3,9 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:16-browsers  # Update to a version that supports newer syntax
+      - image: circleci/node:16  # Test with Node.js version 16
     steps:
       - checkout
-      - run:
-          name: Check Node Version  # Step to confirm Node version
-          command: node -v
       - run:
           name: Install Dependencies
           command: npm install
@@ -18,12 +15,9 @@ jobs:
 
   run-api-tests:
     docker:
-      - image: circleci/node:16-browsers  # Update to a version that supports newer syntax
+      - image: circleci/node:16  # Test with Node.js version 16
     steps:
       - checkout
-      - run:
-          name: Check Node Version  # Step to confirm Node version
-          command: node -v
       - run:
           name: Install Dependencies
           command: npm install
