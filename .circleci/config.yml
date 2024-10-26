@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:14  # Specify Node.js version here
     steps:
       - checkout
       - run:
@@ -11,11 +11,11 @@ jobs:
           command: npm install
       - run:
           name: Run UI Tests
-          command: npm run test:ui  # Use your defined script
+          command: npm run test:ui
 
   run-api-tests:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:14  # Specify Node.js version here
     steps:
       - checkout
       - run:
@@ -23,7 +23,7 @@ jobs:
           command: npm install
       - run:
           name: Run API Tests
-          command: npm run test:api  # Use your defined script
+          command: npm run test:api
 
 workflows:
   version: 2
