@@ -3,38 +3,15 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:18  
-    steps:
-      - checkout
-      - restore_cache:                # Restore the cache before installing dependencies
-          keys:
-            - v1-node-modules-{{ checksum "package.json" }}
-            - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - v1-npm-cache-{{ .Branch }}   # Fallback key
-            - v1-npm-cache                # Fallback key
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - save_cache:                   # Save the cache after dependencies are installed
-          paths:
-            - node_modules
-          key: v1-node-modules-{{ checksum "package.json" }}
-
-      - run:
-          name: Run UI Tests
-          command: npm run test:ui
-
-  run-api-tests:
-    docker:
-      - image: circleci/node:18  
+      - image: circleci/node:18.0  # You can also try circleci/node:latest
     steps:
       - checkout
       - restore_cache:
           keys:
             - v1-node-modules-{{ checksum "package.json" }}
             - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - v1-npm-cache-{{ .Branch }}   # Fallback key
-            - v1-npm-cache                # Fallback key
+            - v1-npm-cache-{{ .Branch }}
+            - v1-npm-cache
       - run:
           name: Install Dependencies
           command: npm install
@@ -42,7 +19,28 @@ jobs:
           paths:
             - node_modules
           key: v1-node-modules-{{ checksum "package.json" }}
+      - run:
+          name: Run UI Tests
+          command: npm run test:ui
 
+  run-api-tests:
+    docker:
+      - image: circleci/node:18.0  # You can also try circleci/node:latest
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-node-modules-{{ checksum "package.json" }}
+            - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - v1-npm-cache-{{ .Branch }}
+            - v1-npm-cache
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-node-modules-{{ checksum "package.json" }}
       - run:
           name: Run API Tests
           command: npm run test:api
