@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:18.0  # You can also try circleci/node:latest
+      - image: circleci/node:18  # Use the general 18 version tag
     steps:
       - checkout
       - restore_cache:
@@ -25,7 +25,7 @@ jobs:
 
   run-api-tests:
     docker:
-      - image: circleci/node:18.0  # You can also try circleci/node:latest
+      - image: circleci/node:18  # Use the general 18 version tag
     steps:
       - checkout
       - restore_cache:
