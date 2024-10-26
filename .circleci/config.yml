@@ -6,9 +6,16 @@ jobs:
       - image: circleci/node:18  
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-node-modules-{{ checksum "package.json" }}
       - run:
           name: Install Dependencies
           command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-node-modules-{{ checksum "package.json" }}
       - run:
           name: Run UI Tests
           command: npm run test:ui
@@ -18,9 +25,16 @@ jobs:
       - image: circleci/node:18  
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-node-modules-{{ checksum "package.json" }}
       - run:
           name: Install Dependencies
           command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-node-modules-{{ checksum "package.json" }}
       - run:
           name: Run API Tests
           command: npm run test:api
