@@ -3,52 +3,24 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:20  # Change this line to the desired Node.js version
+      - image: circleci/node:16  # Update to Node.js version 16 or higher
     steps:
       - checkout
-      - restore_cache:                # Restore the cache before installing dependencies
-          keys:
-            - v1-node-modules-{{ checksum "package.json" }}
-            - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - v1-npm-cache-{{ .Branch }}   # Fallback key
-            - v1-npm-cache                # Fallback key
       - run:
           name: Install Dependencies
           command: npm install
-      - save_cache:                   # Save the cache after dependencies are installed
-          paths:
-            - node_modules
-          key: v1-node-modules-{{ checksum "package.json" }}  # Use one key here
-      - save_cache:                   # Save the npm cache
-          paths:
-            - node_modules
-          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}  # Separate key for npm cache
       - run:
           name: Run UI Tests
           command: npm run test:ui
 
   run-api-tests:
     docker:
-      - image: circleci/node:20  # Change this line to the desired Node.js version
+      - image: circleci/node:16  # Update to Node.js version 16 or higher
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-node-modules-{{ checksum "package.json" }}
-            - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - v1-npm-cache-{{ .Branch }}   # Fallback key
-            - v1-npm-cache                # Fallback key
       - run:
           name: Install Dependencies
           command: npm install
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-node-modules-{{ checksum "package.json" }}
-      - save_cache:                   # Save the npm cache
-          paths:
-            - node_modules
-          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
           name: Run API Tests
           command: npm run test:api
