@@ -11,7 +11,7 @@ jobs:
           command: npm install
       - run:
           name: Run UI Tests
-          command: npm run test:ui
+          command: npm run test:ui  # Use your defined script
 
   run-api-tests:
     docker:
@@ -23,7 +23,7 @@ jobs:
           command: npm install
       - run:
           name: Run API Tests
-          command: npm run test:api
+          command: npm run test:api  # Use your defined script
 
 workflows:
   version: 2
