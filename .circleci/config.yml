@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:18  # Use the general 18 version tag
+      - image: circleci/node:18-browsers  # Use a valid Node.js version with browsers
     steps:
       - checkout
       - restore_cache:
@@ -25,7 +25,7 @@ jobs:
 
   run-api-tests:
     docker:
-      - image: circleci/node:18  # Use the general 18 version tag
+      - image: circleci/node:18-browsers  # Use the same valid version for API tests
     steps:
       - checkout
       - restore_cache:
