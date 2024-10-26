@@ -11,7 +11,7 @@ jobs:
           command: npm install
       - run:
           name: Run UI Tests
-          command: npm test -- --testPathPattern=ui-tests
+          command: npm run test:ui
 
   run-api-tests:
     docker:
@@ -23,7 +23,7 @@ jobs:
           command: npm install
       - run:
           name: Run API Tests
-          command: npm test -- --testPathPattern=api-tests
+          command: npm run test:api
 
 workflows:
   version: 2
