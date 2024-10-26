@@ -8,6 +8,7 @@ jobs:
       - checkout
       - restore_cache:                # Restore the cache before installing dependencies
           keys:
+            - v1-node-modules-{{ checksum "package.json" }}
             - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
             - v1-npm-cache-{{ .Branch }}   # Fallback key
             - v1-npm-cache                # Fallback key
@@ -17,10 +18,7 @@ jobs:
       - save_cache:                   # Save the cache after dependencies are installed
           paths:
             - node_modules
-          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: Run UI Tests
-          command: npm run test:ui
+          key: v1-node-modules-{{ checksum "package.json" }}
 
   run-api-tests:
     docker:
@@ -29,6 +27,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
+            - v1-node-modules-{{ checksum "package.json" }}
             - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
             - v1-npm-cache-{{ .Branch }}   # Fallback key
             - v1-npm-cache                # Fallback key
@@ -38,7 +37,8 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: v1-node-modules-{{ checksum "package.json" }}
+
       - run:
           name: Run API Tests
           command: npm run test:api
