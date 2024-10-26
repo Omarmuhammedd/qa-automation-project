@@ -6,35 +6,39 @@ jobs:
       - image: circleci/node:18  
     steps:
       - checkout
-      - restore_cache:
+      - restore_cache:                # Restore the cache before installing dependencies
           keys:
-            - v1-node-modules-{{ checksum "package.json" }}
+            - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - v1-npm-cache-{{ .Branch }}   # Fallback key
+            - v1-npm-cache                # Fallback key
       - run:
           name: Install Dependencies
           command: npm install
-      - save_cache:
+      - save_cache:                   # Save the cache after dependencies are installed
           paths:
             - node_modules
-          key: v1-node-modules-{{ checksum "package.json" }}
+          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
           name: Run UI Tests
           command: npm run test:ui
 
   run-api-tests:
     docker:
-      - image: circleci/node:18    
+      - image: circleci/node:18  
     steps:
       - checkout
       - restore_cache:
           keys:
-            - v1-node-modules-{{ checksum "package.json" }}
+            - v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - v1-npm-cache-{{ .Branch }}   # Fallback key
+            - v1-npm-cache                # Fallback key
       - run:
           name: Install Dependencies
           command: npm install
       - save_cache:
           paths:
             - node_modules
-          key: v1-node-modules-{{ checksum "package.json" }}
+          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
           name: Run API Tests
           command: npm run test:api
