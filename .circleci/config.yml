@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:14  # Specify Node.js version here
+      - image: circleci/node:16  # Update to Node.js version 16 or higher
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
 
   run-api-tests:
     docker:
-      - image: circleci/node:14  # Specify Node.js version here
+      - image: circleci/node:16  # Update to Node.js version 16 or higher
     steps:
       - checkout
       - run:
