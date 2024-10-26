@@ -18,8 +18,11 @@ jobs:
       - save_cache:                   # Save the cache after dependencies are installed
           paths:
             - node_modules
-          key: v1-node-modules-{{ checksum "package.json" }}
-          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: v1-node-modules-{{ checksum "package.json" }}  # Use one key here
+      - save_cache:                   # Save the npm cache
+          paths:
+            - node_modules
+          key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}  # Separate key for npm cache
       - run:
           name: Run UI Tests
           command: npm run test:ui
@@ -42,6 +45,9 @@ jobs:
           paths:
             - node_modules
           key: v1-node-modules-{{ checksum "package.json" }}
+      - save_cache:                   # Save the npm cache
+          paths:
+            - node_modules
           key: v1-npm-cache-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
           name: Run API Tests
