@@ -22,7 +22,7 @@ jobs:
 
   run-api-tests:
     docker:
-      - image: circleci/node:18  
+      - image: circleci/node:18    
     steps:
       - checkout
       - restore_cache:
