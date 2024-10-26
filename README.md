@@ -73,7 +73,8 @@ This project uses CircleCI for continuous integration. Each push to the reposito
 
 UI Tests: Executes NightwatchJS tests on CircleCI.
 API Tests: Runs Supertest-based API tests.
-CircleCI Badge
+CircleCI Badge: 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Omarmuhammedd/qa-automation-project/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Omarmuhammedd/qa-automation-project/tree/main)
 The current build status can be seen with the badge at the top of this README.
 
 Reporting
