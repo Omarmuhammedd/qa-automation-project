@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   run-ui-tests:
     docker:
-      - image: circleci/node:18  # Use a valid Node.js version
+      - image: circleci/node:14  # Use a valid Node.js version
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
 
   run-api-tests:
     docker:
-      - image: circleci/node:18  # Use a valid Node.js version
+      - image: circleci/node:14  # Use a valid Node.js version
     steps:
       - checkout
       - run:
