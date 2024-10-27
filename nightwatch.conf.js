@@ -1,12 +1,11 @@
 const HtmlReporter = require('nightwatch-html-reporter');
 const reporter = new HtmlReporter({
   openBrowser: false,
-  reportsDirectory: './reports',   // Ensure this directory exists
+  reportsDirectory: './reports',
   reportFilename: 'UITest-report.html',
   themeName: 'default',
   uniqueFilename: true
 });
-
 
 module.exports = {
   src_folders: ['tests'],
@@ -15,22 +14,23 @@ module.exports = {
     start_process: true,
     server_path: require('chromedriver').path,
     port: 9515,
-    cli_args: [],
-    log_path: './webdriver-logs',  // Specify the path to store webdriver logs
+    cli_args: []
   },
   test_settings: {
     default: {
       desiredCapabilities: {
         browserName: 'chrome',
         chromeOptions: {
-          args: []
+          args: [
+            '--headless',        // Run in headless mode
+            '--no-sandbox',      // Disables the sandbox for all process types
+            '--disable-dev-shm-usage'  // Overcomes limited resource problems
+          ]
         }
       },
       globals: {
-        reporter: reporter.fn // Integrate the reporter with Nightwatch
+        reporter: reporter.fn
       }
     }
   }
-
-
 };
