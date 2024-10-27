@@ -40,7 +40,7 @@ module.exports = {
     .setValue('@emailField', 'test1@example.com')
     .setValue('@orderReference', '12345')
     .setValue('@messageField', 'This is a test message.')
-    .uploadFile('@fileInput', 'tests/files/file.txt')
+    .uploadFile('@fileInput', '/home/circleci/project/tests/files/file.txt')
     .click('@submitButton')
     .pause(1500)
     .waitForElementVisible('@successAlert', 10000)
