@@ -42,7 +42,7 @@ app.post('/api/v1/users', (req, res) => {
     // Create a new user
     const newUser = { name, email, password }; // Hash password in production!
     users.push(newUser);
-    return res.status(201).json({ message: 'User registered with success' });
+    return res.status(200).json({ message: 'User registered with success' });
 });
 
 // Authenticate user and return token
@@ -58,12 +58,13 @@ app.post('/api/v1/auth', (req, res) => {
 });
 
 // Get user info
-app.get('/api/v1/users', authenticateToken, (req, res) => {
-    const user = users.find(u => u.email === req.user.email);
-    if (!user) return res.status(404).json({ error: 'User not found' });
 
-    return res.status(200).json({ email: user.email, name: user.name });
-});
+     app.get('/api/v1/users')
+      .set('Authorization',  token);  
+    console.log('Get User Response:', response.body); // Log the response for debugging
+    expect(response.status).toBe(200);  // Expect successful response
+    expect(response.body).toHaveProperty('email', 'user@gmail.com');  // Expect correct email
+
 
 // Update user info
 app.patch('/api/v1/users', authenticateToken, (req, res) => {
