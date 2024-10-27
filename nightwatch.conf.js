@@ -21,8 +21,14 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'chrome',
         chromeOptions: {
-          args: []
-        }
+          args: [
+            '--headless',        // Run in headless mode
+            '--no-sandbox',      // Bypass OS security model
+            '--disable-dev-shm-usage', // Overcome limited resource problems
+            '--disable-gpu',     // Disable GPU hardware acceleration
+            '--window-size=1920,1080', // Set window size
+          ],
+        },
       },
       globals: {
         reporter: reporter.fn // Integrate the reporter with Nightwatch
