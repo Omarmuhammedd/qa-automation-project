@@ -58,13 +58,12 @@ app.post('/api/v1/auth', (req, res) => {
 });
 
 // Get user info
+app.get('/api/v1/users', authenticateToken, (req, token) => {
+    const user = users.find(u => u.email === req.user.email);
+    if (!user) return res.status(404).json({ error: 'User not found' });
 
-     app.get('/api/v1/users')
-      .set('Authorization',  token);  
-    console.log('Get User Response:', response.body); // Log the response for debugging
-    expect(response.status).toBe(200);  // Expect successful response
-    expect(response.body).toHaveProperty('email', 'user@gmail.com');  // Expect correct email
-
+    return res.status(200).json({ email: user.email, name: user.name });
+});
 
 // Update user info
 app.patch('/api/v1/users', authenticateToken, (req, res) => {
