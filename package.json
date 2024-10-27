@@ -6,7 +6,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "nodemon ./node_modules/mock-user-auth/bin/www.js",
         "test:ui": "nightwatch tests/ui/ui.test.js",
-        "test:api": "jest tests/api/auth.test.js"
+        "test:api": "jest tests/api/api.test.js"
     },
     "keywords": [],
     "author": "",
@@ -20,13 +20,19 @@
         "nightwatch-html-reporter": "^2.0.6",
         "piscina": "^3.1.0",
         "selenium-server": "^3.141.59",
-        "supertest": "^7.0.0"
+        "supertest": "^7.0.0",
+        "wait-on": "^8.0.1"
     },
     "dependencies": {
-        "express": "^4.21.1"
+        "bcrypt": "^5.1.1",
+        "body-parser": "^1.20.3",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.1",
+        "jsonwebtoken": "^9.0.2"
     },
     "directories": {
         "test": "tests"
     },
+    
     "description": ""
 }
