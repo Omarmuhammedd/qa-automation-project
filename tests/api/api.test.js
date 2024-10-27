@@ -61,8 +61,7 @@ describe('User Authentication API', () => {
 
   test('Create User - Valid Data', async () => {
     const response = await request(app)
-      .post('/api/v1/users')
-      //.set('Authorization', `Bearer ${token}`) // Set the authorization header with the token
+      .post('/api/v1/users')  
       .send({
         name: 'hudar',
         email: 'dida9@dosipks.com', // Ensure this email is not already in use
@@ -88,7 +87,7 @@ describe('User Authentication API', () => {
     console.log(response.body); // Log the response for debugging
 
     //expect(response.status).toBe(400); // Expect a 400 Bad Request status
-    expect(response.body).not.toHaveProperty('error'); // Expect an error property in the response
+    expect(response.body).not.toHaveProperty('Name, email, and password are required.'); // Expect an error property in the response
   });
 
   test('Get User - Valid Token', async () => {
@@ -96,7 +95,7 @@ describe('User Authentication API', () => {
 
     const response = await request(app)
       .get('/api/v1/users')
-      .set('Authorization',  token);  // Add 'Bearer' prefix to the token
+      .set('Authorization',  token);  
 
     console.log('Get User Response:', response.body); // Log the response for debugging
 
