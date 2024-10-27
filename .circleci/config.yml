@@ -35,7 +35,7 @@ jobs:
           command: npm start &
       - run:
           name: Wait for API Server
-          command: wait-on http://127.0.0.1:3000
+          command: npx wait-on http://127.0.0.1:3000
       - run:
           name: Set Environment Variable
           command: echo 'export API_URL=http://127.0.0.1:3000' >> $BASH_ENV
