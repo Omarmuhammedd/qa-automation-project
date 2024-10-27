@@ -23,7 +23,7 @@ jobs:
           command: npm run test:ui
 
     run-api-tests:
-    executor: node-executor
+      executor: node-executor
     steps:
       - checkout
       - run:
