@@ -36,9 +36,7 @@ jobs:
       - run:
           name: Start Server
           command: npm run start &  # Start server in the background
-      - run:
-          name: Wait for Server to be Ready
-          command: npx wait-on http://localhost:3000  # Adjust URL based on your server
+      
       - run:
           name: Run API Tests
           command: npm run test:api
