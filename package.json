@@ -7,7 +7,7 @@
         "dev": "nodemon ./node_modules/mock-user-auth/bin/www.js",
         "test:ui": "nightwatch tests/ui/ui.test.js",
         "start": "node app.js",
-       "test:api": "concurrently \"npm run start\" \"wait-on http://localhost:3000 && jest tests/api/api.test.js\""
+        "test:api": "concurrently \"npm run start\" \"jest tests/api/api.test.js\""
     },
     "keywords": [],
     "author": "",
