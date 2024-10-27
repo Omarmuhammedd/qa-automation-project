@@ -30,6 +30,13 @@ jobs:
       - run:
           name: Install Dependencies
           command: npm install
+          run:
+          name: Start API Server
+          command: npm start &
+      - run:
+          name: Set Environment Variable
+          command: echo 'export API_URL=http://127.0.0.1:3000' >> $BASH_ENV
+    
       - run:
           name: Run API Tests
           command: npm run test:api
