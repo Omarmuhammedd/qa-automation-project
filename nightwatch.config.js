@@ -8,29 +8,24 @@ const reporter = new HtmlReporter({
 });
 
 module.exports = {
-  src_folders: ['tests'],
-  page_objects_path: ['page_objects'],
+  src_folders: ['tests/ui'],
+  test_workers: {
+    enabled: true,
+    workers: 'auto',
+  },
   webdriver: {
     start_process: true,
     server_path: require('chromedriver').path,
     port: 9515,
-    cli_args: []
   },
   test_settings: {
     default: {
       desiredCapabilities: {
         browserName: 'chrome',
         chromeOptions: {
-          args: [
-          
-            '--no-sandbox',      // Disables the sandbox for all process types
-            '--disable-dev-shm-usage'  // Overcomes limited resource problems
-          ]
-        }
+          args: ['--headless', '--disable-gpu', '--window-size=1920,1080'], // optional: headless mode
+        },
       },
-      globals: {
-        reporter: reporter.fn
-      }
-    }
-  }
+    },
+  },
 };

@@ -1,62 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
-            tests="8">
+            failures="1"
+            tests="2">
 
   <testsuite name="ui.ui.test"
-    errors="0" failures="0" hostname="" id="" package="ui" skipped="0"
-    tests="8" time="141.9" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="ui" skipped="6"
+    tests="2" time="51.10" timestamp="">
   
-    <testcase name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.ui.test" time="7.725" assertions="2">
+    <testcase name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.ui.test" time="7.339" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.ui.test" time="8.216" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test Contact Us - File Upload" classname="ui.ui.test" time="8.361" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test Contact Us - Empty Subject Heading" classname="ui.ui.test" time="9.266" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test Contact Us - Invalid Email" classname="ui.ui.test" time="8.822" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test Contact Us - Empty Message" classname="ui.ui.test" time="8.347" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Test Contact Us - Empty Order Reference" classname="ui.ui.test" time="10.28" assertions="2">
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Search Test" classname="ui.ui.test" time="9.957" assertions="1">
+    <testcase name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.ui.test" time="18.21" assertions="1">  <failure message="Timed out while waiting for element &lt;.alert.alert-success&gt; to be present for 10000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (10068ms)">    at Test Contact Us - Valid Submission (Webmaster) (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:29:8)</failure>
 
     
     </testcase>
@@ -66,6 +24,38 @@
 
     
 
+  
+    
+    <testcase
+      name="Test Contact Us - File Upload" classname="ui.ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Subject Heading" classname="ui.ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Invalid Email" classname="ui.ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Message" classname="ui.ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Test Contact Us - Empty Order Reference" classname="ui.ui.test">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Search Test" classname="ui.ui.test">
+      <skipped />
+    </testcase>
+    
   
   </testsuite>
 </testsuites>
