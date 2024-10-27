@@ -5,58 +5,58 @@
 
   <testsuite name="ui.ui.test"
     errors="0" failures="0" hostname="" id="" package="ui" skipped="0"
-    tests="8" time="141.2" timestamp="">
+    tests="8" time="141.9" timestamp="">
   
-    <testcase name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.ui.test" time="7.389" assertions="2">
+    <testcase name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.ui.test" time="7.725" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.ui.test" time="7.851" assertions="2">
+    <testcase name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.ui.test" time="8.216" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Contact Us - File Upload" classname="ui.ui.test" time="7.585" assertions="2">
+    <testcase name="Test Contact Us - File Upload" classname="ui.ui.test" time="8.361" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Contact Us - Empty Subject Heading" classname="ui.ui.test" time="7.999" assertions="2">
+    <testcase name="Test Contact Us - Empty Subject Heading" classname="ui.ui.test" time="9.266" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Contact Us - Invalid Email" classname="ui.ui.test" time="7.954" assertions="2">
+    <testcase name="Test Contact Us - Invalid Email" classname="ui.ui.test" time="8.822" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Contact Us - Empty Message" classname="ui.ui.test" time="8.025" assertions="2">
+    <testcase name="Test Contact Us - Empty Message" classname="ui.ui.test" time="8.347" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Contact Us - Empty Order Reference" classname="ui.ui.test" time="11.98" assertions="2">
+    <testcase name="Test Contact Us - Empty Order Reference" classname="ui.ui.test" time="10.28" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Search Test" classname="ui.ui.test" time="11.81" assertions="1">
+    <testcase name="Search Test" classname="ui.ui.test" time="9.957" assertions="1">
 
     
     </testcase>
