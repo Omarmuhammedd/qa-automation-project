@@ -6,9 +6,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "nodemon ./node_modules/mock-user-auth/bin/www.js",
         "test:ui": "nightwatch tests/ui/ui.test.js",
-        "start": "node app.js",
-        "test:api": "concurrently \"npm run start\" \"(sleep 5 && jest tests/api/api.test.js)\""
-
+        "test:api": "jest tests/api/api.test.js"
     },
     "keywords": [],
     "author": "",

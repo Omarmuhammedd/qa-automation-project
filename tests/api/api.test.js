@@ -2,13 +2,11 @@ const request = require('supertest');
 const app = 'http://localhost:3000'; // Adjust the port if necessary
 
 
+
 describe('User Authentication API', () => {
   let token;
-  
 
-afterAll(async () => {
-    await app.close(); // Close the server after tests
-});
+  
 
   beforeAll(async () => {
     // Create a user to authenticate
