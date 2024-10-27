@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
-
 // In-memory user storage (for demonstration purposes)
 let users = [];
 const secretKey = 'your_secret_key'; // Replace with your actual secret key
@@ -59,21 +58,13 @@ app.post('/api/v1/auth', (req, res) => {
 });
 
 // Get user info
-app.get('/api/v1/users', authenticateToken, (req, res) => {
-    // Find the user based on the email stored in req.user by the authenticateToken middleware
+app.get('/api/v1/users', authenticateToken, (req, token) => {
     const user = users.find(u => u.email === req.user.email);
-
     if (!user) return res.status(404).json({ error: 'User not found' });
 
-    // Respond with full user data (adjust fields as necessary)
-    return res.status(200).json({
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        password: user.password, 
-        imageUrl: user.imageUrl,
-    });
+    return res.status(200).json({ email: user.email, name: user.name });
 });
+
 // Update user info
 app.patch('/api/v1/users', authenticateToken, (req, res) => {
     const { name, email, password } = req.body;
@@ -109,4 +100,4 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-module.exports = secrver; // Export app for testing purposes
+module.exports = app; // Export app for testing purposes

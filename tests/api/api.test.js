@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = 'http://localhost:3000'; // Adjust the port if necessary
-const server = require('../../app.js');
+
 
 
 
@@ -159,8 +159,6 @@ describe('User Authentication API', () => {
     expect(response.body).toHaveProperty('message', 'Users deleted with success'); // Check for success message 
   });
 
-  afterAll(done => {
-    server.close(done);
-  });
+  
 });
 
