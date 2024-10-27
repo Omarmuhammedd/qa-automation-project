@@ -105,8 +105,8 @@ app.delete('/api/v1/all-users', (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-});
+  });
 
-module.exports = app; // Export app for testing purposes
+module.exports = server; // Export app for testing purposes

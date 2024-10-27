@@ -160,7 +160,7 @@ describe('User Authentication API', () => {
   });
 
   afterAll(done => {
-    app.close(done);
+    server.close(done);
   });
 });
 
