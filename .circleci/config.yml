@@ -34,11 +34,20 @@ jobs:
           name: Start API Server
           command: npm start 
       - run:
+        name: Wait for application to be ready
+        command: |
+            for i in {1..10}; do
+             curl -f http://localhost:3000/api/v1/users && break || sleep 5
+            done
+
+      - run:
           name: Wait for API Server
           command: npx wait-on --timeout 30000 http://127.0.0.1:3000
       - run:
-          name: Set Environment Variable
-          command: echo 'export API_URL=http://127.0.0.1:3000' >> $BASH_ENV
+          name: Set Environment Variables
+          command: |
+            echo 'export NODE_ENV=test' >> $BASH_ENV
+            echo 'export DB_URL=mongodb://your-test-db-url' >> $BASH_ENV
     
       - run:
           name: Run API Tests
