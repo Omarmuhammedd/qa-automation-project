@@ -1,30 +1,135 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
+<testsuites errors="5"
             failures="1"
-            tests="2">
+            tests="1">
 
   <testsuite name="ui.ui.test"
-    errors="0" failures="1" hostname="" id="" package="ui" skipped="6"
-    tests="2" time="51.10" timestamp="">
+    errors="5" failures="1" hostname="" id="" package="ui" skipped="7"
+    tests="1" time="81.90" timestamp="">
   
-    <testcase name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.ui.test" time="7.339" assertions="2">
+    <testcase name="Test Contact Us - Valid Submission (Customer Service)" classname="ui.ui.test" time="40.95" assertions="1">  <failure message="Timed out while waiting for element &lt;.alert.alert-success&gt; to be present for 10000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (10115ms)">    at Test Contact Us - Valid Submission (Customer Service) (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:13:8)</failure>
 
     
-
+    <error message="Timed out while waiting for element &lt;.alert.alert-success&gt; to be present for 10000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not found&#34;[0m [0;90m(10115ms)[0m" type="error"><![CDATA[
+    Error
+    at Command.executeCommand (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\page-object\command-wrapper.js:246:22)
+    at Page.waitForElementVisible (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\page-object\command-wrapper.js:80:27)
+    at Test Contact Us - Valid Submission (Customer Service) (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:13:8)
+    at Context.call (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\testsuite\context.js:505:35)
+    at TestCase.run (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\testsuite\testcase.js:58:31)
+    at Runnable.__runFn (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\testsuite\index.js:813:80)
+    at Runnable.run (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\testsuite\runnable.js:126:21)
+    at TestSuite.executeRunnable (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\testsuite\index.js:974:49)
+    at TestSuite.handleRunnable (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\testsuite\index.js:989:33)
+    at C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\node_modules\nightwatch\lib\testsuite\index.js:813:21
+    ]]></error>
     
     </testcase>
   
-    <testcase name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.ui.test" time="18.21" assertions="1">  <failure message="Timed out while waiting for element &lt;.alert.alert-success&gt; to be present for 10000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (10068ms)">    at Test Contact Us - Valid Submission (Webmaster) (C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:29:8)</failure>
+
+  
+    <system-err>
+       NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+    {&#34;error&#34;:{&#34;name&#34;:&#34;NoSuchWindowError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     5 |     contactUs
+     6 |       .navigate()
+     7 |       .setValue(&#39;@subjectHeading&#39;, &#39;Customer service&#39;) 
+     8 |       .setValue(&#39;@emailField&#39;, &#39;test@example.com&#39;)
+     9 |       .setValue(&#39;@orderReference&#39;, &#39;12345&#39;)
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+    {&#34;error&#34;:{&#34;name&#34;:&#34;NoSuchWindowError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     6 |       .navigate()
+     7 |       .setValue(&#39;@subjectHeading&#39;, &#39;Customer service&#39;)
+     8 |       .setValue(&#39;@emailField&#39;, &#39;test@example.com&#39;) 
+     9 |       .setValue(&#39;@orderReference&#39;, &#39;12345&#39;)
+     10 |       .setValue(&#39;@messageField&#39;, &#39;This is a test message.&#39;)
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+    {&#34;error&#34;:{&#34;name&#34;:&#34;NoSuchWindowError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     7 |       .setValue(&#39;@subjectHeading&#39;, &#39;Customer service&#39;)
+     8 |       .setValue(&#39;@emailField&#39;, &#39;test@example.com&#39;)
+     9 |       .setValue(&#39;@orderReference&#39;, &#39;12345&#39;) 
+     10 |       .setValue(&#39;@messageField&#39;, &#39;This is a test message.&#39;)
+     11 |       .click(&#39;@submitButton&#39;)
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+    {&#34;error&#34;:{&#34;name&#34;:&#34;NoSuchWindowError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     8 |       .setValue(&#39;@emailField&#39;, &#39;test@example.com&#39;)
+     9 |       .setValue(&#39;@orderReference&#39;, &#39;12345&#39;)
+     10 |       .setValue(&#39;@messageField&#39;, &#39;This is a test message.&#39;) 
+     11 |       .click(&#39;@submitButton&#39;)
+     12 |       .pause(1500)
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+    {&#34;error&#34;:{&#34;name&#34;:&#34;NoSuchWindowError&#34;,&#34;remoteStacktrace&#34;:&#34;&#34;},&#34;status&#34;:-1,&#34;value&#34;:null}
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    C:\Users\EGYPT_LAPTOP\qa_automation_project\qa-automation-project\tests\ui\ui.test.js:
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     9 |       .setValue(&#39;@orderReference&#39;, &#39;12345&#39;)
+     10 |       .setValue(&#39;@messageField&#39;, &#39;This is a test message.&#39;)
+     11 |       .click(&#39;@submitButton&#39;) 
+     12 |       .pause(1500)
+     13 |       .waitForElementVisible(&#39;@successAlert&#39;, 10000)
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    </system-err>
+  
 
     
+
+  
+    
+    <testcase
+      name="Test Contact Us - Valid Submission (Webmaster)" classname="ui.ui.test">
+      <skipped />
     </testcase>
-  
-
-  
-
-    
-
-  
     
     <testcase
       name="Test Contact Us - File Upload" classname="ui.ui.test">

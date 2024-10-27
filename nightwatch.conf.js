@@ -8,10 +8,10 @@ const reporter = new HtmlReporter({
 });
 
 module.exports = {
-  src_folders: ['tests'],
-  page_objects_path: ['page_objects'],
+  src_folders: ['tests'],                // Path to your test files
+  page_objects_path: ['page_objects'],   // Path to your page object files
   webdriver: {
-    start_process: false,
+    start_process: true,
     server_path: require('chromedriver').path,
     port: 9515,
     cli_args: []
@@ -21,16 +21,13 @@ module.exports = {
       desiredCapabilities: {
         browserName: 'chrome',
         chromeOptions: {
-          args: [
-            
-            '--no-sandbox',      // Disables the sandbox for all process types
-            '--disable-dev-shm-usage'  // Overcomes limited resource problems
-          ]
+          args: []
         }
       },
       globals: {
-        reporter: reporter.fn
+        reporter: reporter.fn // Integrate the reporter with Nightwatch
       }
     }
   }
 };
+
