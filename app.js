@@ -59,12 +59,20 @@ app.post('/api/v1/auth', (req, res) => {
 
 // Get user info
 app.get('/api/v1/users', authenticateToken, (req, res) => {
+    // Find the user based on the email stored in req.user by the authenticateToken middleware
     const user = users.find(u => u.email === req.user.email);
+
     if (!user) return res.status(404).json({ error: 'User not found' });
 
-    return res.status(200).json({ email: user.email, name: user.name });
+    // Respond with full user data (adjust fields as necessary)
+    return res.status(200).json({
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        password: user.password, 
+        imageUrl: user.imageUrl,
+    });
 });
-
 // Update user info
 app.patch('/api/v1/users', authenticateToken, (req, res) => {
     const { name, email, password } = req.body;
