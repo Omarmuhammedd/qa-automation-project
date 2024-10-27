@@ -8,24 +8,29 @@ const reporter = new HtmlReporter({
 });
 
 module.exports = {
+  src_folders: ['tests'],
+  page_objects_path: ['page_objects'],
+  webdriver: {
+    start_process: true,
+    server_path: require('chromedriver').path,
+    port: 9515,
+    cli_args: []
+  },
   test_settings: {
     default: {
-      launch_url: 'http://automationpractice.multiformis.com',
-      selenium: {
-        start_process: true,
-        server_path: require('chromedriver').path,
-        port: 9515,
-      },
       desiredCapabilities: {
         browserName: 'chrome',
         chromeOptions: {
           args: [
-            '--no-sandbox',
-            '--disable-dev-shm-usage',
-            '--headless', // Optional: run in headless mode
-          ],
-        },
+          
+            '--no-sandbox',      // Disables the sandbox for all process types
+            '--disable-dev-shm-usage'  // Overcomes limited resource problems
+          ]
+        }
       },
-    },
-  },
+      globals: {
+        reporter: reporter.fn
+      }
+    }
+  }
 };
