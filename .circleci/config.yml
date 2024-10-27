@@ -27,7 +27,7 @@ jobs:
           name: Run UI Tests
           command: npm run test:ui
 
-  jobs:
+  
   run-api-tests:
     docker:
       - image: circleci/node:16
