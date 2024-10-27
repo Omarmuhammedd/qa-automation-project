@@ -156,5 +156,8 @@ describe('User Authentication API', () => {
 
     expect(response.status).toBe(200); // Expect a 200 OK status
     expect(response.body).toHaveProperty('message', 'Users deleted with success'); // Check for success message
+    afterAll(done => {
+      app.close(done);
+    });
   });
 });
