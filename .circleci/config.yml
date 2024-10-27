@@ -27,23 +27,21 @@ jobs:
           name: Run UI Tests
           command: npm run test:ui
 
+  jobs:
   run-api-tests:
     docker:
-      - image: circleci/node:16  # Use Node.js version 16
+      - image: circleci/node:16
     steps:
       - checkout
       - run:
           name: Install Dependencies
           command: npm install
       - run:
+          name: Start Server
+          command: npm run start &
+      - run:
+          name: Wait for Server to be Ready
+          command: wait-on http://localhost:3000  # Adjust the URL based on your server
+      - run:
           name: Run API Tests
           command: npm run test:api
-
-workflows:
-  version: 2
-  test:
-    jobs:
-      - run-ui-tests
-      - run-api-tests:
-          requires:
-            - run-ui-tests

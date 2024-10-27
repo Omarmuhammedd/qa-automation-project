@@ -1,7 +1,5 @@
 const request = require('supertest');
-const app = 'http://localhost:3000'; 
-
-
+const app = 'http://localhost:3000'; // Adjust the port if necessary
 
 
 describe('User Authentication API', () => {
