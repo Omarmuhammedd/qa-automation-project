@@ -41,7 +41,7 @@ jobs:
       - checkout
       - run:
           name: Run tests
-          command: npm test # Run your tests
+          command: npm run test:api
 
 
 workflows:
