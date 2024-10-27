@@ -11,7 +11,7 @@ module.exports = {
   src_folders: ['tests'],
   page_objects_path: ['page_objects'],
   webdriver: {
-    start_process: true,
+    start_process: false,
     server_path: require('chromedriver').path,
     port: 9515,
     cli_args: []
@@ -22,7 +22,7 @@ module.exports = {
         browserName: 'chrome',
         chromeOptions: {
           args: [
-            '--headless',        // Run in headless mode
+            
             '--no-sandbox',      // Disables the sandbox for all process types
             '--disable-dev-shm-usage'  // Overcomes limited resource problems
           ]
