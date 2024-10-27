@@ -26,20 +26,23 @@ jobs:
           name: Run UI Tests
           command: npm run test:ui
 
-  run-api-tests:
-    executor: node-executor  # Use the defined executor
+  obs:
+  install:
+    executor: node-executor
+    steps:
+      - checkout # Check out the code
+      - run:
+          name: Install dependencies
+          command: npm install
+
+  test:
+    executor: node-executor
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Start Server
-          command: npm run start &  # Start server in the background
-      
-      - run:
-          name: Run API Tests
-          command: npm run test:api
+          name: Run tests
+          command: npm test # Run your tests
+
 
 workflows:
   version: 2
