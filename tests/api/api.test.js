@@ -4,7 +4,14 @@ const app = 'http://localhost:3000'; // Adjust the port if necessary
 
 describe('User Authentication API', () => {
   let token;
-  
+  beforeAll(async () => {
+    server = app.listen(); // Start the server before tests
+    // Any setup to generate token if needed
+});
+
+afterAll(async () => {
+    await server.close(); // Close the server after tests
+});
 
   beforeAll(async () => {
     // Create a user to authenticate
