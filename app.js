@@ -58,17 +58,12 @@ app.post('/api/v1/auth', (req, res) => {
 });
 
 // Get user info
-function authenticateToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Get the token from the header
-    if (!token) return res.sendStatus(401); // No token provided
+app.get('/api/v1/users', authenticateToken, (req, res) => {
+    const user = users.find(u => u.email === req.user.email);
+    if (!user) return res.status(404).json({ error: 'User not found' });
 
-    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-        if (err) return res.sendStatus(403); // Token invalid
-        req.user = user; // Attach user information to the request
-        next(); // Proceed to the next middleware
-    });
-}
+    return res.status(200).json({ email: user.email, name: user.name });
+});
 
 // Update user info
 app.patch('/api/v1/users', authenticateToken, (req, res) => {
