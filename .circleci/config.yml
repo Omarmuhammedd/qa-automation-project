@@ -41,7 +41,7 @@ jobs:
           command: echo 'export API_URL=http://127.0.0.1:3000' >> $BASH_ENV
       - run:
           name: Wait for API Server
-          command: wait-on http://127.0.0.1:3000  # Use wait-on to confirm server startup
+          command: npx wait-on http://127.0.0.1:3000  # Use wait-on to confirm server startup
       - run:
           name: Run API Tests
           command: npm run test:api
