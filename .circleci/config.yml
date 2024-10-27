@@ -27,19 +27,19 @@ jobs:
           command: npm run test:ui
 
   run-api-tests:
-    executor: node-executor  # Use the defined executor
+    docker:
+      - image: circleci/node:16
     steps:
       - checkout
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Start Server
-          command: npm run start 
-      
-      - run:
-          name: Run API Tests
-          command: npm run test:api
+      - restore_cache:
+          keys:
+            - node-modules-v1-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: node-modules-v1-{{ checksum "package.json" }}
+      - run: npm run test:api
 
 workflows:
   version: 2
