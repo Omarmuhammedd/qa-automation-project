@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
+
 // In-memory user storage (for demonstration purposes)
 let users = [];
 const secretKey = 'your_secret_key'; // Replace with your actual secret key
@@ -108,4 +109,4 @@ app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-module.exports = app; // Export app for testing purposes
+module.exports = { app, server };
